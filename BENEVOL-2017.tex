@@ -396,8 +396,7 @@ Email: dizquierdo@bitergia.com}}
 \begin{abstract}
 Researchers working with software repositories, often when
 building performance or quality models, need to recover
-traceability links between bug reports in issue tracking repos-
-itories and reviews in code review systems.
+traceability links between bug reports in issue tracking repositories and reviews in code review systems.
 \\
 However, too often the information stored in bug tracking
 repositories is not explicitly tagged or linked to the issues
@@ -460,17 +459,16 @@ a patch, to spot defect-introducing code
 changes during review, to predict the number and locale of
 bugs in future software releases, or to investigate technical
 and non-technical factors influencing modern code review 
-(\cite{2bib,3bib,4bib,5bib,6bib,7bib}).
+(~\cite{2bib,3bib,4bib,5bib,6bib,7bib}).
 \\
-However, to achieve such studies, much of the informa-
-tion stored in software repositories must be processed and
+However, to perform such studies, much of the information stored in software repositories must be processed and
 cleaned for further analysis. Such processing and cleaning
 is often done using assumptions and heuristics.
 \\
 The quality of these assumptions and heuristics represents 
 a threat to the validity of results derived from software
 repositories. Different studies by Bird et al. \cite{8bib} and Antoniol
-et al. \cite{9bib}, have casted doubts on the quality of data produced 
+et al. \cite{9bib} have casted doubts on the quality of data produced 
 using such heuristics.
 \\
 To prevent or minimize such situations, we present two algorithms 
@@ -493,9 +491,9 @@ Our approach can be summed up in the following steps:
 \begin{enumerate}
 \item \emph{Extraction of the information from the data sources.}
 OpenStack repositories consists in the
-issue tracking (Launchpad ) and code review (Gerrit) 
+issue tracking (Launchpad) and code review (Gerrit) 
 repositories. We extracted these
-data using Metrics Grimoire \footnote{https://github.com/MetricsGrimoire/}, 
+data using Metrics Grimoire\footnote{https://github.com/MetricsGrimoire/}, 
 a toolset to obtain data from repositories related to software development, 
 provided and mantained by Bitergia.
 \item \emph{Identification of data needed for the linkage.} In this process we 
@@ -529,17 +527,17 @@ the branch on which a code change had been made. It follows the naming conventio
 We extracted this identifiers, and then proceded with the linkage. 
 In summary, the \emph{state-of-practice} algorithm is:
 \\
-\begin{list}{}{}
+\begin{itemize}
 
-\item[$\space$] identify the \emph{related artifact};
+\item identify the \emph{related artifact};
 
-apply regular expresions to extract \emph{bug\_id} from \emph{related artifacts};
+\item apply regular expresions to extract \emph{bug\_id} from \emph{related artifacts};
 
-link between issues and bugs matching where bug identification is \emph{bug\_id}.\\
+\item create a link between issues and bugs matching where bug identification is \emph{bug\_id}.
 
-\end{list}
+\end{itemize}
 
-The most inconvenient drawback of this approach is that, in practice, often, developers 
+The most inconvenient drawback of this approach is that, in practice, developers often 
 do not report such identifiers, resulting in missing links.
 %\\
 %After applying this approach to OpenStack, we recovered 72\% of the links with reviews 
@@ -555,17 +553,17 @@ developers work with \textit{specifications} and \textit{blueprints}.
 We analyzed Launchpad workflow and found a pattern that allowed us 
 to identify which tickets are issues (bugs). These tickets follow a certain 
 evolution of the \emph{state} attribute.
-Next step, we preprocessed the comments of the issues to extract the 
+As a next step, we preprocessed the comments of the issues to extract the 
 review identifiers.
 In summary, the \emph{state-of-practice} algorithm is:
 \\
-\begin{list}{}{}
+\begin{itemize}
 
-\item[$\space$] identify \emph{bug reports};
+\item identify \emph{bug reports};
 
-exctract \emph{issue\_id}, the information related to the issue that is reviewing the bug from the comments of the bug;
+\item exctract \emph{issue\_id}, the information related to the issue that is reviewing the bug from the comments of the bug;
 
-link between bugs and issues where issue identification is \emph{issue\_id}.\\ 
+\item create a link between bugs and issues where issue identification is \emph{issue\_id}.\\ 
 
 \end{list}
 
@@ -578,7 +576,7 @@ resulting dataset.
 \section{Results and Conclusions}
 
 After applying both \emph{state-of-the-practice} algorithms to OpenStack, we linked 
-72\% of the issues with the 1st Approach, and 90.2\% with the 2nd Approach.
+72\% of the issues with the first approach, and 90.2\% with the second approach.
 \\
 Clearly one approach outstands the other. We
 hope these results will be a guideline to other researchers in
@@ -586,8 +584,8 @@ future helping them to decide how to recover the links at the
 best of their advantage. 
 \\
 While, on one hand, we tested our
-approach on a single case study, OpenStack, on the other
-what enfroces our confidence that this case acts as a representative 
+approach on a single case study, OpenStack, on the other hand 
+what enforces our confidence that this case acts as a representative 
 for the category is that code review process follows
 the same principles and practices everywhere.
 
